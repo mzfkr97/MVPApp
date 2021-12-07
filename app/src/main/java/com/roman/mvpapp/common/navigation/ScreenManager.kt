@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentFactory
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.roman.mvpapp.presentation.details.DetailsFragment
 import com.roman.mvpapp.presentation.main.MainFragment
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.presentation.model.CurrencyUi
 
 sealed interface ScreenManager : FragmentScreen {
 

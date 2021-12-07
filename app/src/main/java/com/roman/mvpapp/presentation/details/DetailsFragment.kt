@@ -8,7 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.roman.mvpapp.R
 import com.roman.mvpapp.common.extension.showToast
 import com.roman.mvpapp.databinding.FragmentDetailsBinding
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.presentation.model.CurrencyUi
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 

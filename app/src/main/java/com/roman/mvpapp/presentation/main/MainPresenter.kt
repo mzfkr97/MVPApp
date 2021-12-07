@@ -1,4 +1,4 @@
-package com.roman.mvpapp.presentation.activity
+package com.roman.mvpapp.presentation.main
 
 import com.github.terrakok.cicerone.Router
 import com.roman.mvpapp.R
@@ -7,10 +7,10 @@ import com.roman.mvpapp.common.providers.NetworkProvider
 import com.roman.mvpapp.common.providers.ResourceProvider
 import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
 import com.roman.mvpapp.domain.mapper.CurrencyLocalToUiMapper
-import com.roman.mvpapp.presentation.MainContractView
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.presentation.model.CurrencyUi
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import moxy.InjectViewState
@@ -32,7 +32,7 @@ class MainPresenter @Inject constructor(
             viewState.showToast(throwable.message.toString())
         }
 
-    private val checkConnectionMessage by lazy {
+    private val errorConnection by lazy {
         resourceProvider.getString(R.string.error__no_internet_available)
     }
 
@@ -48,25 +48,45 @@ class MainPresenter @Inject constructor(
                 showError(visibility = false)
             }
             presenterScope.launch(exceptionHandler) {
-                val currencies = withContext(Dispatchers.IO) {
+
+                withContext(Dispatchers.IO) {
                     interactor.loadCurrencies()
-                        .map(
-                            currencyLocalToUiMapper::map
-                        )
                 }
-                viewState.apply {
-                    loadCurrencies(currencies = currencies)
-                    getProgress(progressVisible = false)
-                }
+
+                interactor.subscribe()
+                    .distinctUntilChanged()
+                    .filter {
+                        it.isNotEmpty()
+                    }
+                    .onEach { currencyList ->
+                        val currencies = currencyList
+                            .map(
+                                currencyLocalToUiMapper::map
+                            )
+                        viewState.apply {
+                            loadCurrencies(
+                                currencies = currencies
+                            )
+                            getProgress(
+                                progressVisible = false
+                            )
+                        }
+                    }
+                    .launchIn(scope = this)
+
             }.invokeOnCompletion {
-                viewState. getProgress(progressVisible = false)
+                viewState.getProgress(
+                    progressVisible = false
+                )
             }
         } else {
             viewState.apply {
-                getProgress(progressVisible = false)
+                getProgress(
+                    progressVisible = false
+                )
                 showError(
                     visibility = true,
-                    message = checkConnectionMessage
+                    message = errorConnection
                 )
             }
         }

@@ -5,7 +5,7 @@ import com.roman.mvpapp.common.providers.NetworkProvider
 import com.roman.mvpapp.common.providers.ResourceProvider
 import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
 import com.roman.mvpapp.domain.mapper.CurrencyLocalToUiMapper
-import com.roman.mvpapp.presentation.activity.MainPresenter
+import com.roman.mvpapp.presentation.main.MainPresenter
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

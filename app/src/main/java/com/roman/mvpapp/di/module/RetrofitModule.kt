@@ -3,7 +3,7 @@ package com.roman.mvpapp.di.module
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.roman.mvpapp.BuildConfig
-import com.roman.mvpapp.data.api.ApiCurrency
+import com.roman.mvpapp.data.remote.api.ApiCurrency
 import com.roman.mvpapp.di.annotations.DefaultHttpClient
 import dagger.Module
 import dagger.Provides

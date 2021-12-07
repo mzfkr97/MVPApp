@@ -1,27 +1,28 @@
 package com.roman.mvpapp.data.repositories
 
-import com.roman.mvpapp.data.api.ApiCurrency
-import com.roman.mvpapp.data.mapper.CurrenciesRemoteToLocalMapper
-import com.roman.mvpapp.domain.model.CurrencyLocal
+import com.roman.mvpapp.data.local.LocalDataSource
+import com.roman.mvpapp.data.remote.RemoteDataSource
+import com.roman.mvpapp.domain.model.Currency
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 interface Repository {
 
-    suspend fun loadCurrency(): List<CurrencyLocal>
+    val allCurrencyFlow: Flow<List<Currency>>
+
+    suspend fun updateCurrencies()
 }
 
 class BankRepositoryImpl @Inject constructor(
-    private val currencyApi: ApiCurrency,
-    private val remoteToLocalMapper: CurrenciesRemoteToLocalMapper
-) : Repository {
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource,
+    ): Repository {
 
-    override suspend fun loadCurrency(): List<CurrencyLocal> {
-        return currencyApi.getAllCurrency()
-            .asSequence()
-            .map(
-                remoteToLocalMapper::map
-            )
-            .filterNotNull()
-            .toList()
+    override val allCurrencyFlow
+        get() = localDataSource.allCurrencyFlow
+
+    override suspend fun updateCurrencies() {
+        val currencies = remoteDataSource.getAllCurrencies()
+        localDataSource.updateCurrencies(currencies)
     }
 }

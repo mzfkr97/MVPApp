@@ -1,17 +1,17 @@
 package com.roman.mvpapp.domain.mapper
 
-import com.roman.mvpapp.domain.model.CurrencyLocal
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.domain.model.Currency
+import com.roman.mvpapp.presentation.model.CurrencyUi
 import javax.inject.Inject
 
 class CurrencyLocalToUiMapper @Inject constructor() {
 
-    fun map(model: CurrencyLocal) = with(model) {
+    fun map(model: Currency) = with(model) {
         CurrencyUi(
-            curAbbreviation = curAbbreviation,
+            curAbbreviation = abbreviation,
             curId = curId,
             curName = curName,
-            curOfficialRate = curOfficialRate,
+            curOfficialRate = officialRate.toString(),
             curScale = curScale.toString(),
             date = date,
             scaleAndName = scaleAndName,

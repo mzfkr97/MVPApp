@@ -1,4 +1,4 @@
-package com.roman.mvpapp.presentation.main.model
+package com.roman.mvpapp.presentation.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -8,7 +8,7 @@ data class CurrencyUi(
     val curAbbreviation: String,
     val curId: Int,
     val curName: String,
-    val curOfficialRate: Double,
+    val curOfficialRate: String,
     val curScale: String,
     val date: String,
     val scaleAndName: String,

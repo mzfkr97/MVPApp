@@ -1,17 +1,26 @@
 package com.roman.mvpapp.domain.interactors
 
 import com.roman.mvpapp.data.repositories.Repository
-import com.roman.mvpapp.domain.model.CurrencyLocal
+import com.roman.mvpapp.domain.model.Currency
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 interface MainFragmentInteractor {
 
-    suspend fun loadCurrencies(): List<CurrencyLocal>
+    fun subscribe(): Flow<List<Currency>>
+
+    suspend fun loadCurrencies()
 }
 
 class MainFragmentInteractorImpl @Inject constructor(
     private val repository: Repository
 ) : MainFragmentInteractor {
 
-    override suspend fun loadCurrencies() = repository.loadCurrency()
+    override fun subscribe(): Flow<List<Currency>> {
+        return repository.allCurrencyFlow
+    }
+
+    override suspend fun loadCurrencies() {
+        repository.updateCurrencies()
+    }
 }

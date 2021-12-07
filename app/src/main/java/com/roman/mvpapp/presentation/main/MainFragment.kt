@@ -8,10 +8,8 @@ import com.roman.mvpapp.R
 import com.roman.mvpapp.common.extension.showToast
 import com.roman.mvpapp.databinding.FragmentMainBinding
 import com.roman.mvpapp.di.AppComponent
-import com.roman.mvpapp.presentation.MainContractView
-import com.roman.mvpapp.presentation.activity.MainPresenter
 import com.roman.mvpapp.presentation.main.adapter.MainCurrencyAdapter
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.presentation.model.CurrencyUi
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject

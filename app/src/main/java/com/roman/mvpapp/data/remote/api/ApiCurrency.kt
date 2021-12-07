@@ -1,6 +1,6 @@
-package com.roman.mvpapp.data.api
+package com.roman.mvpapp.data.remote.api
 
-import com.roman.mvpapp.data.model.CurrencyRemote
+import com.roman.mvpapp.data.remote.model.CurrencyRemote
 import retrofit2.http.GET
 
 /**
