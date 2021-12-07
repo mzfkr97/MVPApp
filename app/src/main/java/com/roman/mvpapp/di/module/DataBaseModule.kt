@@ -1,8 +1,6 @@
 package com.roman.mvpapp.di.module
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
 import androidx.room.Room
 import com.roman.mvpapp.data.local.CurrenciesDb
 import dagger.Module

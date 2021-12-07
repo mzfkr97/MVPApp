@@ -7,12 +7,12 @@ import com.roman.mvpapp.data.remote.api.ApiCurrency
 import com.roman.mvpapp.di.annotations.DefaultHttpClient
 import dagger.Module
 import dagger.Provides
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 @Module
 class RetrofitModule {

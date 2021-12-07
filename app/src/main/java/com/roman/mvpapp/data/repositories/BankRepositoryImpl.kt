@@ -3,8 +3,8 @@ package com.roman.mvpapp.data.repositories
 import com.roman.mvpapp.data.local.LocalDataSource
 import com.roman.mvpapp.data.remote.RemoteDataSource
 import com.roman.mvpapp.domain.model.Currency
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
@@ -16,7 +16,7 @@ interface Repository {
 class BankRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
-    ): Repository {
+) : Repository {
 
     override val allCurrencyFlow
         get() = localDataSource.allCurrencyFlow

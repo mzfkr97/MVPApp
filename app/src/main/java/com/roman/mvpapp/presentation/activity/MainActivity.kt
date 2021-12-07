@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             fragmentTransaction.apply {
                 setReorderingAllowed(true)
                 setCustomAnimations(
-                    android.R.animator.fade_in, android.R.animator.fade_out
+                    android.R.animator.fade_in,
+                    android.R.animator.fade_out
                 )
             }
         }

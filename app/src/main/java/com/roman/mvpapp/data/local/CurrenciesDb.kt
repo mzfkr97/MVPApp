@@ -3,7 +3,7 @@ package com.roman.mvpapp.data.local
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.roman.mvpapp.data.local.dao.CurrencyDao
-import com.roman.mvpapp.data.local.model.CurrencyLocal
+import com.roman.mvpapp.data.local.entity.CurrencyLocal
 
 @Database(
     entities = [CurrencyLocal::class],

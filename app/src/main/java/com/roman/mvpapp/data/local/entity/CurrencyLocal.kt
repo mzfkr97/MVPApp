@@ -1,4 +1,4 @@
-package com.roman.mvpapp.data.local.model
+package com.roman.mvpapp.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

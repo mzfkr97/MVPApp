@@ -1,11 +1,12 @@
 package com.roman.mvpapp.data.local
 
 import com.roman.mvpapp.data.local.dao.CurrencyDao
+import com.roman.mvpapp.data.local.maper.DataToLocalMapper
 import com.roman.mvpapp.data.model.CurrencyData
 import com.roman.mvpapp.domain.model.Currency
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
 
 interface LocalDataSource {
 

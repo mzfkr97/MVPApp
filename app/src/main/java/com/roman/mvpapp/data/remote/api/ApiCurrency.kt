@@ -4,7 +4,7 @@ import com.roman.mvpapp.data.remote.model.CurrencyRemote
 import retrofit2.http.GET
 
 /**
- * Params here: http://www.nbrb.by/apihelp/exrates
+ * @params here: http://www.nbrb.by/apihelp/exrates
  */
 interface ApiCurrency {
 

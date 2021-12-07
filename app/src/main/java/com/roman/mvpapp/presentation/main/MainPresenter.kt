@@ -8,6 +8,7 @@ import com.roman.mvpapp.common.providers.ResourceProvider
 import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
 import com.roman.mvpapp.domain.mapper.CurrencyLocalToUiMapper
 import com.roman.mvpapp.presentation.model.CurrencyUi
+import javax.inject.Inject
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -16,7 +17,6 @@ import kotlinx.coroutines.withContext
 import moxy.InjectViewState
 import moxy.MvpPresenter
 import moxy.presenterScope
-import javax.inject.Inject
 
 @InjectViewState
 class MainPresenter @Inject constructor(
@@ -60,9 +60,8 @@ class MainPresenter @Inject constructor(
                     }
                     .onEach { currencyList ->
                         val currencies = currencyList
-                            .map(
-                                currencyLocalToUiMapper::map
-                            )
+                            .map(currencyLocalToUiMapper::map)
+
                         viewState.apply {
                             loadCurrencies(
                                 currencies = currencies
@@ -73,7 +72,6 @@ class MainPresenter @Inject constructor(
                         }
                     }
                     .launchIn(scope = this)
-
             }.invokeOnCompletion {
                 viewState.getProgress(
                     progressVisible = false

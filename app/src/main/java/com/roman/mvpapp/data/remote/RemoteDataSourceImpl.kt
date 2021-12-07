@@ -1,9 +1,8 @@
 package com.roman.mvpapp.data.remote
 
 import com.roman.mvpapp.data.mapper.CurrenciesRemoteToDataMapper
-import com.roman.mvpapp.data.remote.api.ApiCurrency
-import com.roman.mvpapp.data.local.model.CurrencyLocal
 import com.roman.mvpapp.data.model.CurrencyData
+import com.roman.mvpapp.data.remote.api.ApiCurrency
 import javax.inject.Inject
 
 interface RemoteDataSource {
@@ -18,9 +17,7 @@ class RemoteDataSourceImpl @Inject constructor(
     override suspend fun getAllCurrencies(): List<CurrencyData> {
         return currencyApi.getAllCurrency()
             .asSequence()
-            .map(
-                remoteToDataMapper::map
-            )
+            .map(remoteToDataMapper::map)
             .filterNotNull()
             .toList()
     }
