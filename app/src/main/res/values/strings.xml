@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVPApp</string>
+
+    <string name="main_fragment__load_currency_action">Load Currency</string>
+
+    <string name="error__no_internet_available">Check your internet connection</string>
+</resources>
