@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.roman.mvpapp.databinding.ItemCurrencyMainBinding
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
+import com.roman.mvpapp.presentation.model.CurrencyUi
 
 class MainCurrencyAdapter(
     val itemClick: (item: CurrencyUi) -> Unit,
@@ -29,7 +29,7 @@ class MainCurrencyAdapter(
         return holder.bind(currentList[position])
     }
 
-    inner class Holder(val binding: ItemCurrencyMainBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class Holder(private val binding: ItemCurrencyMainBinding) : RecyclerView.ViewHolder(binding.root) {
 
         private val item: CurrencyUi
             get() = getItem(bindingAdapterPosition)
@@ -45,7 +45,7 @@ class MainCurrencyAdapter(
                 textCurName.text = model.curName
                 textCodeAbbreviation.text = model.curAbbreviation
                 textScaleAndName.text = model.scaleAndName
-                textCurOfficialRate.text = model.date
+                textCurOfficialRate.text = model.curOfficialRate
             }
         }
     }

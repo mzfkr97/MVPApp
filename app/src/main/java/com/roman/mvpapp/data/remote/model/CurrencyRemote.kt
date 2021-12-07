@@ -1,4 +1,4 @@
-package com.roman.mvpapp.data.model
+package com.roman.mvpapp.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

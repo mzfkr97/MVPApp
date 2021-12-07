@@ -1,3 +1,0 @@
-# MVPApp
-
-Write something later

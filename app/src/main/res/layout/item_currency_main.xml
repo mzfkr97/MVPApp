@@ -6,19 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/material_cursor_width"
+    app:cardElevation="@dimen/material_clock_hand_padding"
     app:strokeColor="@color/purple_200"
     app:strokeWidth="1dp"
     >
 
     <LinearLayout
-        android:layout_margin="@dimen/design_snackbar_padding_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/design_snackbar_padding_vertical"
         android:orientation="vertical"
         >
 
         <TextView
             android:id="@+id/textCurName"
+            style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Канадский Доллар"
@@ -26,6 +28,7 @@
 
         <TextView
             android:id="@+id/textCodeAbbreviation"
+            style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="USD"
@@ -33,6 +36,7 @@
 
         <TextView
             android:id="@+id/textScaleAndName"
+            style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="1 Канадский доллар"
@@ -40,11 +44,12 @@
 
         <TextView
             android:id="@+id/textCurOfficialRate"
+            style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             tools:text="2.612"
             />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
-

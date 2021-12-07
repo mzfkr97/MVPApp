@@ -8,14 +8,12 @@ import com.roman.mvpapp.R
 import com.roman.mvpapp.common.extension.showToast
 import com.roman.mvpapp.databinding.FragmentMainBinding
 import com.roman.mvpapp.di.AppComponent
-import com.roman.mvpapp.presentation.MainContractView
-import com.roman.mvpapp.presentation.activity.MainPresenter
 import com.roman.mvpapp.presentation.main.adapter.MainCurrencyAdapter
-import com.roman.mvpapp.presentation.main.model.CurrencyUi
-import moxy.MvpAppCompatFragment
-import moxy.ktx.moxyPresenter
+import com.roman.mvpapp.presentation.model.CurrencyUi
 import javax.inject.Inject
 import javax.inject.Provider
+import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
 
 class MainFragment : MvpAppCompatFragment(R.layout.fragment_main), MainContractView {
 
@@ -62,8 +60,8 @@ class MainFragment : MvpAppCompatFragment(R.layout.fragment_main), MainContractV
     }
 
     override fun showError(visibility: Boolean, message: String) {
-        with(binding){
-            tvError.apply{
+        with(binding) {
+            tvError.apply {
                 isVisible = visibility
                 text = message
             }

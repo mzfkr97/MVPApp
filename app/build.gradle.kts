@@ -75,6 +75,11 @@ dependencies {
     // Cicerone
     implementation("com.github.terrakok:cicerone:7.1")
 
+    // Room
+    implementation("androidx.room:room-ktx:2.3.0")
+    implementation("androidx.room:room-runtime:2.3.0")
+    kapt("androidx.room:room-compiler:2.3.0")
+
     // ViewBinding
     implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
 

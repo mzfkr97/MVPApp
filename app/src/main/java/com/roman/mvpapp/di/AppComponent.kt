@@ -3,22 +3,24 @@ package com.roman.mvpapp.di
 import android.content.Context
 import com.roman.mvpapp.di.module.*
 import com.roman.mvpapp.presentation.activity.MainActivity
-import com.roman.mvpapp.presentation.activity.MainPresenter
 import com.roman.mvpapp.presentation.app.MyApplication
 import com.roman.mvpapp.presentation.details.DetailsFragment
 import com.roman.mvpapp.presentation.main.MainFragment
+import com.roman.mvpapp.presentation.main.MainPresenter
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Component(
     modules = [
+        DataBaseModule::class,
         MainFragmentModule::class,
         ToolsModule::class,
         RepositoryModule::class,
         RetrofitModule::class,
         NavigationModule::class,
         InteractorsModule::class,
+        DataSourcesModule::class,
     ]
 )
 
@@ -50,7 +52,7 @@ interface AppComponent {
         }
 
         fun get(): AppComponent {
-            return component ?: throw NotImplementedError("AppComponent Not Implemented Error")
+            return component ?: throw NotImplementedError("AppComponent: Not Implemented Error")
         }
     }
 }
