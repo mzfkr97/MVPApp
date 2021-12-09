@@ -1,5 +1,6 @@
 package com.roman.mvpapp.presentation.main
 
+import android.util.Log
 import com.github.terrakok.cicerone.Router
 import com.roman.mvpapp.R
 import com.roman.mvpapp.common.navigation.ScreenManager
@@ -36,7 +37,7 @@ class MainPresenter @Inject constructor(
         resourceProvider.getString(R.string.error__no_internet_available)
     }
 
-    init {
+    override fun onFirstViewAttach() {
         loadCurrencies()
     }
 

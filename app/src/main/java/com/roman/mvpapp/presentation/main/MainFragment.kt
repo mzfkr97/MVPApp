@@ -22,7 +22,7 @@ class MainFragment : MvpAppCompatFragment(R.layout.fragment_main), MainContractV
     @Inject
     lateinit var presenterProvider: Provider<MainPresenter>
 
-    private val presenter by moxyPresenter {
+    private val presenter by moxyPresenter(name = "MainPresenter") {
         presenterProvider.get()
     }
 
