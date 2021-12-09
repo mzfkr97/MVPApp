@@ -1,4 +1,4 @@
-package com.roman.mvpapp.domain.mapper
+package com.roman.mvpapp.presentation.mapper
 
 import com.roman.mvpapp.domain.model.Currency
 import com.roman.mvpapp.presentation.model.CurrencyUi
