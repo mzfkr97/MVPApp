@@ -20,8 +20,6 @@ class DetailsPresenter @AssistedInject constructor(
     @Assisted("DetailsPresenter.currencyUi") private val currencyUi: CurrencyUi,
 ) : MvpPresenter<DetailsContractView>() {
 
-
-
     override fun onFirstViewAttach() {
         viewState.showCurrency(currencyUi)
     }
@@ -29,5 +27,4 @@ class DetailsPresenter @AssistedInject constructor(
     init {
         Log.d("TAG", "currencyUi: ${ currencyUi }")
     }
-
 }
