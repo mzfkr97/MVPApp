@@ -1,2 +1,8 @@
 # MVPApp
-sample mvp app
+
+sample mvp application
+
+- moxy
+- cicerone
+- dagger 2
+- room
