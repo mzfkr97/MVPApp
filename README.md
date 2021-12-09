@@ -6,3 +6,4 @@ sample mvp application
 - cicerone
 - dagger 2
 - room
+- ktlint
