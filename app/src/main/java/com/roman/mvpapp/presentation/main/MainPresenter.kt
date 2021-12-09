@@ -1,13 +1,12 @@
 package com.roman.mvpapp.presentation.main
 
-import android.util.Log
 import com.github.terrakok.cicerone.Router
 import com.roman.mvpapp.R
 import com.roman.mvpapp.common.navigation.ScreenManager
 import com.roman.mvpapp.common.providers.NetworkProvider
 import com.roman.mvpapp.common.providers.ResourceProvider
 import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
-import com.roman.mvpapp.domain.mapper.CurrencyLocalToUiMapper
+import com.roman.mvpapp.presentation.mapper.CurrencyLocalToUiMapper
 import com.roman.mvpapp.presentation.model.CurrencyUi
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineExceptionHandler

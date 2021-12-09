@@ -9,7 +9,4 @@ interface DetailsContractView : MvpView {
 
     @AddToEndSingle
     fun showCurrency(currencies: CurrencyUi)
-
-    @Skip
-    fun errorAction()
 }

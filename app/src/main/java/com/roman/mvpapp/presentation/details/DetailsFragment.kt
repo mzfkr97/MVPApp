@@ -46,18 +46,10 @@ class DetailsFragment : MvpAppCompatFragment(R.layout.fragment_details), Details
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//
-//        binding.textView.text = args.toString()
-//        requireActivity().showToast(args.toString())
     }
 
     override fun showCurrency(currencies: CurrencyUi) {
         binding.textView.text = currencies.toString()
         requireActivity().showToast(currencies.toString())
-    }
-
-    override fun errorAction() {
-        TODO("Not yet implemented")
     }
 }
