@@ -15,6 +15,7 @@ import javax.inject.Singleton
     modules = [
         DataBaseModule::class,
         MainFragmentModule::class,
+        DetailsFragmentModule::class,
         ToolsModule::class,
         RepositoryModule::class,
         RetrofitModule::class,
@@ -35,7 +36,7 @@ interface AppComponent {
         @BindsInstance
         fun context(context: Context): Builder
     }
-    fun getMyPresenter(): MainPresenter
+
     fun inject(where: MyApplication)
     fun inject(where: MainActivity)
     fun inject(where: MainFragment)

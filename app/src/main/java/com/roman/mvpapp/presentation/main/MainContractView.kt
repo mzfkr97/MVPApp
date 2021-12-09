@@ -4,6 +4,7 @@ import com.roman.mvpapp.common.extension.EMPTY_STRING
 import com.roman.mvpapp.presentation.model.CurrencyUi
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
+import moxy.viewstate.strategy.alias.Skip
 
 interface MainContractView : MvpView {
 
@@ -22,6 +23,6 @@ interface MainContractView : MvpView {
         message: String = EMPTY_STRING
     )
 
-    @AddToEndSingle
+    @Skip
     fun errorAction()
 }
