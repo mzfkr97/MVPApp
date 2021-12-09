@@ -2,9 +2,10 @@
 
 sample mvp application
 
-- moxy
-- cicerone
-- dagger 2
-- room
-- retrofit
-- ktlint
+- Clean Architecture
+- Moxy
+- Cicerone
+- Dagger 2
+- Room
+- Retrofit
+- Ktlint
