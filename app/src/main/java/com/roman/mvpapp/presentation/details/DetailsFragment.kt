@@ -44,12 +44,7 @@ class DetailsFragment : MvpAppCompatFragment(R.layout.fragment_details), Details
         AppComponent.get().inject(this)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun showCurrency(currencies: CurrencyUi) {
         binding.textView.text = currencies.toString()
-        requireActivity().showToast(currencies.toString())
     }
 }
