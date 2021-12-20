@@ -1,7 +1,7 @@
 package com.roman.mvpapp.di.module
 
 import com.roman.mvpapp.data.repositories.BankRepositoryImpl
-import com.roman.mvpapp.data.repositories.Repository
+import com.roman.mvpapp.domain.Repository
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton

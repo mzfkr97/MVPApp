@@ -14,9 +14,9 @@ class MainCurrencyAdapter(
 
     companion object {
         val DIFF_ITEM_CALLBACK = object : DiffUtil.ItemCallback<CurrencyUi>() {
-            override fun areItemsTheSame(oldItem: CurrencyUi, newItem: CurrencyUi) = oldItem.curId == newItem.curId
+            override fun areItemsTheSame(oldItem: CurrencyUi, newItem: CurrencyUi) = oldItem.id == newItem.id
             override fun getChangePayload(oldItem: CurrencyUi, newItem: CurrencyUi) = Any()
-            override fun areContentsTheSame(oldItem: CurrencyUi, newItem: CurrencyUi) = oldItem.curId == newItem.curId
+            override fun areContentsTheSame(oldItem: CurrencyUi, newItem: CurrencyUi) = oldItem.id == newItem.id
         }
     }
 
@@ -42,10 +42,10 @@ class MainCurrencyAdapter(
 
         fun bind(model: CurrencyUi) {
             with(binding) {
-                textCurName.text = model.curName
-                textCodeAbbreviation.text = model.curAbbreviation
+                textCurName.text = model.name
+                textCodeAbbreviation.text = model.abbreviation
                 textScaleAndName.text = model.scaleAndName
-                textCurOfficialRate.text = model.curOfficialRate
+                textCurOfficialRate.text = model.officialRate
             }
         }
     }

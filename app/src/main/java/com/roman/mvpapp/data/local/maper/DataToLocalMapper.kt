@@ -10,24 +10,24 @@ class DataToLocalMapper @Inject constructor() {
     fun toLocal(data: CurrencyData) = with(data) {
         CurrencyLocal(
             abbreviation = abbreviation,
-            curId = curId,
-            curName = curName,
+            id = id,
+            name = name,
             officialRate = officialRate,
             curScale = curScale,
             date = date,
-            scaleAndName = "$curScale $curName"
+            scaleAndName = "$curScale $name"
         )
     }
 
     fun toData(data: CurrencyLocal) = with(data) {
         Currency(
             abbreviation = abbreviation,
-            curId = curId,
-            curName = curName,
+            id = id,
+            name = name,
             officialRate = officialRate,
             curScale = curScale,
             date = date,
-            scaleAndName = "$curScale $curName"
+            scaleAndName = "$curScale $name"
         )
     }
 }

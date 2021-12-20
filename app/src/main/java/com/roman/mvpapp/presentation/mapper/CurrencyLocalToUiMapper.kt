@@ -8,11 +8,11 @@ class CurrencyLocalToUiMapper @Inject constructor() {
 
     fun map(model: Currency) = with(model) {
         CurrencyUi(
-            curAbbreviation = abbreviation,
-            curId = curId,
-            curName = curName,
-            curOfficialRate = officialRate.toString(),
-            curScale = curScale.toString(),
+            abbreviation = abbreviation,
+            id = id,
+            name = name,
+            officialRate = officialRate.toString(),
+            scale = curScale.toString(),
             date = date,
             scaleAndName = scaleAndName,
         )

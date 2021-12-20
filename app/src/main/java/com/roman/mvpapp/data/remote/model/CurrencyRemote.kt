@@ -6,9 +6,9 @@ data class CurrencyRemote(
     @SerializedName("Cur_Abbreviation")
     val abbreviation: String,
     @SerializedName("Cur_ID")
-    val curId: Int,
+    val id: Int,
     @SerializedName("Cur_Name")
-    val curName: String,
+    val name: String,
     @SerializedName("Cur_OfficialRate")
     val officialRate: Double,
     @SerializedName("Cur_Scale")

@@ -3,7 +3,7 @@ package com.roman.mvpapp.di.module
 import com.github.terrakok.cicerone.Router
 import com.roman.mvpapp.common.providers.NetworkProvider
 import com.roman.mvpapp.common.providers.ResourceProvider
-import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
+import com.roman.mvpapp.domain.MainFragmentInteractor
 import com.roman.mvpapp.presentation.mapper.CurrencyLocalToUiMapper
 import com.roman.mvpapp.presentation.main.MainPresenter
 import dagger.Module

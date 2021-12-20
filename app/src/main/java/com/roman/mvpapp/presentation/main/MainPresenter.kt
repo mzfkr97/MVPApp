@@ -5,7 +5,7 @@ import com.roman.mvpapp.R
 import com.roman.mvpapp.common.navigation.ScreenManager
 import com.roman.mvpapp.common.providers.NetworkProvider
 import com.roman.mvpapp.common.providers.ResourceProvider
-import com.roman.mvpapp.domain.interactors.MainFragmentInteractor
+import com.roman.mvpapp.domain.MainFragmentInteractor
 import com.roman.mvpapp.presentation.mapper.CurrencyLocalToUiMapper
 import com.roman.mvpapp.presentation.model.CurrencyUi
 import javax.inject.Inject

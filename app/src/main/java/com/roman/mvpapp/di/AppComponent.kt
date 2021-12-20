@@ -15,7 +15,6 @@ import javax.inject.Singleton
     modules = [
         DataBaseModule::class,
         MainFragmentModule::class,
-        DetailsFragmentModule::class,
         ToolsModule::class,
         RepositoryModule::class,
         RetrofitModule::class,

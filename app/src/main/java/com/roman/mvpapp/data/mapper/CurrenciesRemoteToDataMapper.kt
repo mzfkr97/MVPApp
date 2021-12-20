@@ -9,12 +9,12 @@ class CurrenciesRemoteToDataMapper @Inject constructor() {
     fun map(data: CurrencyRemote) = with(data) {
         CurrencyData(
             abbreviation = abbreviation,
-            curId = curId,
-            curName = curName,
+            id = id,
+            name = name,
             officialRate = officialRate,
             curScale = curScale,
             date = date,
-            scaleAndName = "$curScale $curName"
+            scaleAndName = "$curScale $name"
         )
     }
 }

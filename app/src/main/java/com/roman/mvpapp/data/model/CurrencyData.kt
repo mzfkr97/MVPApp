@@ -1,9 +1,9 @@
 package com.roman.mvpapp.data.model
 
 data class CurrencyData(
-    val curId: Int,
+    val id: Int,
     val abbreviation: String,
-    val curName: String,
+    val name: String,
     val officialRate: Double,
     val curScale: Int,
     val date: String,

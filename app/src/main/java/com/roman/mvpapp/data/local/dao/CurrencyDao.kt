@@ -8,6 +8,6 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CurrencyDao : BaseDao<CurrencyLocal> {
 
-    @Query("SELECT * FROM currencies ORDER BY curName ASC")
+    @Query("SELECT * FROM currencies ORDER BY name ASC")
     fun getAllCurrency(): Flow<List<CurrencyLocal>>
 }

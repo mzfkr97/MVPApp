@@ -66,9 +66,6 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 
-    // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.4.0")
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.work:work-runtime:2.7.1")
 

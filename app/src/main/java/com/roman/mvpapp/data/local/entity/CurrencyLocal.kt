@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "currencies")
 data class CurrencyLocal(
     @PrimaryKey
-    val curId: Int,
+    val id: Int,
     val abbreviation: String,
-    val curName: String,
+    val name: String,
     val officialRate: Double,
     val curScale: Int,
     val date: String,
